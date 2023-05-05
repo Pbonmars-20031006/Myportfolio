@@ -7,8 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:scroll_animations/bottom3.dart';
+import 'package:scroll_animations/bottom4.dart';
 import 'package:scroll_animations/bottomsection.dart';
 import 'package:scroll_animations/bottomsection2.dart';
+import 'package:scroll_animations/end.dart';
 
 part 'home_view.widgets.dart';
 
@@ -112,6 +114,38 @@ class HomeView extends StatelessWidget {
               return Offset(
                   screenSize.width - scrollOffset, -screenSize.height);
             },
+          ),
+          ScrollTransformItem(
+            builder: (scrollOffset) {
+              final offScreenPercentage =
+                  min(scrollOffset / screenSize.height, 1.0);
+              return Container(
+                height: screenSize.height -
+                    (screenSize.height * 0.4 * offScreenPercentage),
+                width: screenSize.width -
+                    (screenSize.width * 0.1 * offScreenPercentage),
+                child: BottomSection4(),
+              );
+            },
+            offsetBuilder: (scrollOffset) {
+              return Offset(0, -screenSize.height);
+            },
+          ),
+          ScrollTransformItem(
+            builder: (scrollOffset) {
+              final offScreenPercentage =
+                  min(scrollOffset / screenSize.height, 1.0);
+              // return Container(
+              // height: screenSize.height -
+              //     (screenSize.height * 0.4 * offScreenPercentage),
+              // width: screenSize.width -
+              //     (screenSize.width * 0.1 * offScreenPercentage),
+              return end1();
+              //  );
+            },
+            // offsetBuilder: (scrollOffset) {
+            //   return Offset(screenSize.width - scrollOffset, 0);
+            // },
           ),
         ],
       ),

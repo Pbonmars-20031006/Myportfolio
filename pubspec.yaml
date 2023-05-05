@@ -43,6 +43,10 @@ dependencies:
   animated_text_kit: ^4.2.2
   delayed_widget: ^1.1.2
   peanut: ^4.3.1
+  carousel_slider: ^4.2.1
+  url_launcher: ^6.1.10
+  glassmorphism: ^3.0.0
+  font_awesome_flutter: ^10.4.0
 
 dev_dependencies:
   flutter_test:
