@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "homepage": "https://pbonmars-20031006.github.io/Myportfolio/",
     "firebase": "^9.21.0"
   }
 }
