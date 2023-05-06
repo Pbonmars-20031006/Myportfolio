@@ -1,3 +1,5 @@
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -17,8 +19,8 @@ class _BottomSectionState extends State<BottomSection> {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return Container(
-      height: screenSize.height,
-      width: screenSize.width,
+      height: kIsWeb ? screenSize.height : screenSize.width,
+      width: kIsWeb ? screenSize.width : screenSize.height,
       color: Colors.black,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
@@ -31,21 +33,23 @@ class _BottomSectionState extends State<BottomSection> {
                 child: Container(
                   //top: -50,
 
-                  child: Text(
-                    '"I am a selftaught fullstack flutter developer,\n with expertise in Firebase and Firestore.\n Also have experience of deploying, testing \n and debugging apps"', // have realtime experience of deploying, testing and debugging realtime apps. Helped building Weekend Story a SaaS app with over 2k+ downloads" ',
+                  child: AutoSizeText(
+                    '" I am a selftaught fullstack flutter developer,\n  with expertise in Firebase and Firestore.\n I have experience of deploying, testing \n and debugging apps realtiem"', // have realtime experience of deploying, testing and debugging realtime apps. Helped building Weekend Story a SaaS app with over 2k+ downloads" ',
                     //textAlign: TextAlign.center,
                     style: GoogleFonts.biryani(
                       color: Colors.white,
-                      fontSize: 40,
+                      fontSize: screenSize.height * 0.043,
                       fontWeight: FontWeight.w800,
-                      height: 1.2,
+                      // height: 1.2,
                     ),
                   ),
                 ),
               ),
               Image.asset(
-                'images/Firebase.gif',
-                height: 300,
+                'assets/images/Firebase.gif',
+                height:
+                    kIsWeb ? screenSize.height * 0.4 : screenSize.height * 0.1,
+                //fit: BoxFit.contain,
               ),
             ],
           ),

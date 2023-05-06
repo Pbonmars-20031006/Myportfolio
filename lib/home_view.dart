@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:delayed_widget/delayed_widget.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -87,7 +88,7 @@ class HomeView extends StatelessWidget {
                   min(scrollOffset / screenSize.height, 1.0);
               return Container(
                 height: screenSize.height -
-                    (screenSize.height * 0.4 * offScreenPercentage),
+                    (screenSize.height * 0.3 * offScreenPercentage),
                 width: screenSize.width -
                     (screenSize.width * 0.1 * offScreenPercentage),
                 child: BottomSection2(),
@@ -106,7 +107,7 @@ class HomeView extends StatelessWidget {
                 height: screenSize.height -
                     (screenSize.height * 0.4 * offScreenPercentage),
                 width: screenSize.width -
-                    (screenSize.width * 0.1 * offScreenPercentage),
+                    (screenSize.width * 0.001 * offScreenPercentage),
                 child: BottomSection3(),
               );
             },

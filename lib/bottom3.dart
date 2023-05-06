@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:delayed_widget/delayed_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -22,49 +23,35 @@ class _BottomSection3State extends State<BottomSection3> {
       height: screenSize.height,
       width: screenSize.width,
       color: Colors.black,
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        //controller: ScrollController,
+      child: Center(
+        child: SingleChildScrollView(
+          //scrollDirection: Axis.horizontal,
+          //controller: ScrollController,
 
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.asset(
-              "images/ws_black.png",
-              height: 300,
-            ),
-            Container(
-              child: Column(
-                children: [
-                  Container(
-                    //top: -50,
-                    child: Text(
-                      '" Weekend Story, a SaaS app with over 2k+ downloads. Worked on features like listing plans,\n circles , exclusives etc. Also played a role in introducing new features as well as designing the UI/UX\n of the app." ',
-                      //textAlign: TextAlign.center,
-                      style: GoogleFonts.biryani(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w800,
-                        // height: 1.2,
-                      ),
-                    ),
-                  ),
-                  Row(children: [
-                    GestureDetector(
-                      child: Container(
-                        color: Colors.blue,
-                        height: 100,
-                        // decoration: BoxDecoration(
-                        //   color: Colors.white,
-                        // ),
-                      ),
-                    ),
-                  ]),
-                ],
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.asset(
+                "assets/images/ws_black.png",
+                height: screenSize.height * 0.2,
+                //alignment: Alignment.centerLeft,
               ),
-            ),
-          ],
+              Container(
+                //top: -50,
+                child: AutoSizeText(
+                  '" Weekend Story, a SaaS app with over 2k+ \n downloads. Worked on features like listing \n plans, circles , exclusives etc.\n Also played a role in introducing new features\n as well as designing the UI/UX\n of the app." ',
+                  //textAlign: TextAlign.center,
+                  style: GoogleFonts.biryani(
+                    color: Colors.white,
+                    fontSize: screenSize.height * 0.02,
+                    fontWeight: FontWeight.w800,
+                    // height: 1.2,
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

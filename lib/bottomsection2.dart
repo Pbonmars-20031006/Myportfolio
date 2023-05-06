@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:delayed_widget/delayed_widget.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -19,20 +20,19 @@ class _BottomSection2State extends State<BottomSection2> {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return Container(
-      height: screenSize.height,
-      width: screenSize.width,
+      height: kIsWeb ? screenSize.height : screenSize.width,
+      width: kIsWeb ? screenSize.width : screenSize.height,
       color: Colors.black,
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        //controller: ScrollController,
-        child: GestureDetector(
-          child: Row(
-            children: [
-              Visibility(
-                visible: tap == true ? false : true,
-                child: Container(
-                  //top: -50,
-
+      child: Center(
+        child: SingleChildScrollView(
+          //scrollDirection: Axis.horizontal,
+          //controller: ScrollController,
+          child: Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Center(
                   child: DelayedWidget(
                     delayDuration: const Duration(seconds: 2), // Not required
                     animationDuration:
@@ -47,11 +47,11 @@ class _BottomSection2State extends State<BottomSection2> {
                           textStyle: TextStyle(
                             fontFamily: 'italian',
                             color: Colors.white,
-                            fontSize: 80,
+                            fontSize: screenSize.height * 0.07,
                             fontWeight: FontWeight.w800,
                             //height: 1.2,
                           ),
-//
+                          //
                           speed: const Duration(milliseconds: 100),
                         ),
                       ],
@@ -61,8 +61,8 @@ class _BottomSection2State extends State<BottomSection2> {
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

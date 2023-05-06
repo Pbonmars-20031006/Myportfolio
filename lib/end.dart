@@ -58,7 +58,7 @@ class _endState extends State<end1> {
           Container(
             //top: -50,
             child: Text(
-              'Hope you enjoyed the experiencce! (Built Using Flutter❤️)',
+              'Hope you enjoyed the experience! (Built Using Flutter❤️)',
               //textAlign: TextAlign.center,
               style: GoogleFonts.biryani(
                 color: Colors.white,
